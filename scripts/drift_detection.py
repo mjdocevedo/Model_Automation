@@ -9,7 +9,7 @@ data_drift_report = Report(metrics=[
     DataDriftPreset(),
 ])
 
-data_drift_report.run(current_data=drifted_data.drop('Outcome', axis =1), 
+data_drift_report.run(current_data=new_data.drop('Outcome', axis =1), 
                       reference_data=reference_data.drop('Outcome', axis =1), 
                       column_mapping=None)
 report_json = data_drift_report.as_dict()
